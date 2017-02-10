@@ -20,10 +20,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     AYCheckManager *checkManger = [AYCheckManager sharedCheckManager];
-    checkManger.countryAbbreviation = @"cn";
+    checkManger.countryAbbreviation = @"tr";
 //    checkManger.openAPPStoreInsideAPP = YES;
 //    [checkManger checkVersion];
-    [checkManger checkVersionWithAlertTitle:@"发现新版本" nextTimeTitle:@"下次提示" confimTitle:@"前往更新" skipVersionTitle:@"跳过当前版本"];
+    [checkManger checkVersionWithAlertTitle:@"Yeni sürüm keşfedildi" nextTimeTitle:@"İpuçları" confimTitle:@"Güncelle" skipVersionTitle:@"Daha sonra"];
 }
 
 - (void)didReceiveMemoryWarning {

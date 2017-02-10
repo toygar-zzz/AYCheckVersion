@@ -36,9 +36,9 @@ static AYCheckManager *checkManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         checkManager = [[AYCheckManager alloc] init];
-        checkManager.nextTimeTitle = @"下次提示";
-        checkManager.confimTitle = @"前往更新";
-        checkManager.alertTitle = @"发现新版本";
+        checkManager.nextTimeTitle = @"Sonraki ipuçları";
+        checkManager.confimTitle = @"Güncellemelere git";
+        checkManager.alertTitle = @"Yeni sürüm";
         checkManager.skipVersionTitle = nil;
     });
     return checkManager;
@@ -67,7 +67,8 @@ static AYCheckManager *checkManager = nil;
     
     NSURL *requestURL;
     if (self.countryAbbreviation == nil) {
-        requestURL = [NSURL URLWithString:[NSString stringWithFormat:NORMAL_MODE_CHECK_URL,BUNDLE_IDENTIFIER]];
+        //requestURL = [NSURL URLWithString:[NSString stringWithFormat:NORMAL_MODE_CHECK_URL,BUNDLE_IDENTIFIER]];
+      requestURL = [NSURL URLWithString:[NSString stringWithFormat:SPECIAL_MODE_CHECK_URL,self.countryAbbreviation,BUNDLE_IDENTIFIER]];
     } else {
         requestURL = [NSURL URLWithString:[NSString stringWithFormat:SPECIAL_MODE_CHECK_URL,self.countryAbbreviation,BUNDLE_IDENTIFIER]];
     }
