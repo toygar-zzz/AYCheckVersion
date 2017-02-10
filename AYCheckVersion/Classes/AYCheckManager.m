@@ -69,7 +69,7 @@ static AYCheckManager *checkManager = nil;
     if (self.countryAbbreviation == nil) {
       requestURL = [NSURL URLWithString:[NSString stringWithFormat:NORMAL_MODE_CHECK_URL,BUNDLE_IDENTIFIER]];
     } else {
-        requestURL = [NSURL URLWithString:[NSString stringWithFormat:SPECIAL_MODE_CHECK_URL,self.countryAbbreviation,BUNDLE_IDENTIFIER,self.countryAbbreviation]];
+        requestURL = [NSURL URLWithString:[NSString stringWithFormat:SPECIAL_MODE_CHECK_URL,BUNDLE_IDENTIFIER,self.countryAbbreviation]];
     }
     NSURLRequest *request = [NSURLRequest requestWithURL:requestURL];
     NSURLSession *session = [NSURLSession sharedSession];
