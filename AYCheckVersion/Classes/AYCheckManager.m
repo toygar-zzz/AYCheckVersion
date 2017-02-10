@@ -16,7 +16,7 @@
 #define APP_LAST_VERSION @"APPLastVersion"
 #define APP_RELEASE_NOTES @"APPReleaseNotes"
 #define APP_TRACK_VIEW_URL @"APPTRACKVIEWURL"
-#define SPECIAL_MODE_CHECK_URL @"https://itunes.apple.com/lookup?country=%@&bundleId=%@lang=%@"
+#define SPECIAL_MODE_CHECK_URL @"https://itunes.apple.com/lookup?country=%@&bundleId=%@&lang=%@"
 #define NORMAL_MODE_CHECK_URL @"https://itunes.apple.com/lookup?bundleId=%@"
 #define SKIP_CURRENT_VERSION @"SKIPCURRENTVERSION"
 #define SKIP_VERSION @"SKIPVERSION"
