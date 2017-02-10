@@ -16,7 +16,7 @@
 #define APP_LAST_VERSION @"APPLastVersion"
 #define APP_RELEASE_NOTES @"APPReleaseNotes"
 #define APP_TRACK_VIEW_URL @"APPTRACKVIEWURL"
-#define SPECIAL_MODE_CHECK_URL @"https://itunes.apple.com/lookup?country=%@&bundleId=%@"
+#define SPECIAL_MODE_CHECK_URL @"https://itunes.apple.com/lookup?country=%@&bundleId=%@lang=%@"
 #define NORMAL_MODE_CHECK_URL @"https://itunes.apple.com/lookup?bundleId=%@"
 #define SKIP_CURRENT_VERSION @"SKIPCURRENTVERSION"
 #define SKIP_VERSION @"SKIPVERSION"
@@ -67,10 +67,9 @@ static AYCheckManager *checkManager = nil;
     
     NSURL *requestURL;
     if (self.countryAbbreviation == nil) {
-        //requestURL = [NSURL URLWithString:[NSString stringWithFormat:NORMAL_MODE_CHECK_URL,BUNDLE_IDENTIFIER]];
-      requestURL = [NSURL URLWithString:[NSString stringWithFormat:SPECIAL_MODE_CHECK_URL,self.countryAbbreviation,BUNDLE_IDENTIFIER]];
+      requestURL = [NSURL URLWithString:[NSString stringWithFormat:NORMAL_MODE_CHECK_URL,BUNDLE_IDENTIFIER]];
     } else {
-        requestURL = [NSURL URLWithString:[NSString stringWithFormat:SPECIAL_MODE_CHECK_URL,self.countryAbbreviation,BUNDLE_IDENTIFIER]];
+        requestURL = [NSURL URLWithString:[NSString stringWithFormat:SPECIAL_MODE_CHECK_URL,self.countryAbbreviation,BUNDLE_IDENTIFIER,self.countryAbbreviation]];
     }
     NSURLRequest *request = [NSURLRequest requestWithURL:requestURL];
     NSURLSession *session = [NSURLSession sharedSession];
